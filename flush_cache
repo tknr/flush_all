@@ -1,0 +1,6 @@
+#!/bin/bash
+echo "this command must be executed in root user."
+
+free -h
+echo 3 > /proc/sys/vm/drop_caches
+free -h
