@@ -1,0 +1,13 @@
+#!/bin/bash
+echo "this command must be executed in root user."
+
+## jmap -histo:live <pid>
+## http://cco.hatenablog.jp/entry/2013/05/20/223212
+for line in `ps aux | grep java | tr -s " " | grep -v grep | tr " " "," | cut -d ',' -f 1-2`
+do
+	arr=( `echo $line | tr -s ',' ' '`)
+	user=${arr[0]}
+	pid=${arr[1]}
+	sudo -u $user jmap -histo:live $pid
+done
+
