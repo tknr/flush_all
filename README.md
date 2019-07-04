@@ -1,4 +1,4 @@
-# renice_all
+# flush_all
 
 ## ref.
 
