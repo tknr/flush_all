@@ -15,7 +15,6 @@ echo "changing nice value to ${nice_value}..."
 ## renice_all
 ps --no-heading -eo user | sort | uniq | while read user
 do
-    echo ${user}
     renice -n ${nice_value} -u ${user}
 done
 
