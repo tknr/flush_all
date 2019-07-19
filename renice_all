@@ -13,8 +13,9 @@ if [ $@ > 0 ] ;then
 fi
 echo "changing nice value to ${nice_value}..."
 ## renice_all
-for user in `ps aux | tail -n +2 | tr -s " " | tr -s " " "," | cut -d ',' -f 1 | sort | uniq`
+ps --no-heading -eo user | sort | uniq | while read user
 do
+    echo ${user}
     renice -n ${nice_value} -u ${user}
 done
 
