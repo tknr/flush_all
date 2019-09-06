@@ -4,7 +4,7 @@ if [ $(whoami) != "root" ]; then
         exit 1
 fi
 
-/usr/local/bin/jmap_hist_live_all || exit 1
+/usr/local/bin/jmap_hist_live_all
 /usr/local/bin/flush_cache || exit 1
 /usr/local/bin/renice_all || exit 1
 
