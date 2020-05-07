@@ -8,6 +8,6 @@ fi
 ## https://qiita.com/geishagirlskoume/items/ffa54eaa141c7892c88e#comment-7ddd420126ad93e7aa28
 ps --no-heading -o user,pid -C java | while read user pid;
 do
-	sudo -u $user /bin/jmap -histo:live $pid
+	/bin/sudo -u $user /bin/jmap -histo:live $pid
 done
 
