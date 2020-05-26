@@ -6,5 +6,8 @@ if [ $(whoami) != "root" ]; then
 fi
 
 free -h
+grep -e Dirty: -e Writeback: /proc/meminfo
+sync
+grep -e Dirty: -e Writeback: /proc/meminfo
 echo 3 > /proc/sys/vm/drop_caches
 free -h
